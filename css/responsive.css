@@ -1,0 +1,281 @@
+/* Responsive Styles */
+
+/* Large Devices (Desktops) */
+@media screen and (max-width: 1200px) {
+  .section-container {
+    width: 95%;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media screen and (max-width: 992px) {
+  html {
+    font-size: 15px;
+  }
+  
+  .navbar {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .nav-links {
+    gap: var(--spacing-sm);
+  }
+  
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-xl);
+  }
+  
+  .home-text {
+    order: 2;
+  }
+  
+  .home-image {
+    order: 1;
+  }
+  
+  .description {
+    margin: 0 auto var(--spacing-lg);
+  }
+  
+  .about-content {
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+  
+  .about-text {
+    order: 2;
+  }
+  
+  .about-image {
+    order: 1;
+  }
+  
+  .projects-grid,
+  .certificates-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-content {
+    flex-direction: column;
+  }
+  
+  .contact-info,
+  .contact-form-container {
+    flex: none;
+    width: 100%;
+  }
+  
+  .resume-text {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+/* Small Devices (Landscape Tablets, Small Laptops) */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .navbar {
+    position: relative;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--header-bg);
+    box-shadow: var(--header-shadow);
+    padding: var(--spacing-md) 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: calc(var(--z-header) - 1);
+    transition: transform var(--transition-normal), opacity var(--transition-normal);
+    backdrop-filter: blur(10px);
+  }
+  
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: var(--spacing-sm) 0;
+  }
+  
+  .hamburger {
+    display: flex;
+    z-index: var(--z-header);
+  }
+  
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .projects-grid,
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .name {
+    font-size: 3rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .certificates-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .resume-item ul {
+    margin-left: var(--spacing-md);
+  }
+}
+
+/* Extra Small Devices (Phones) */
+@media screen and (max-width: 576px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .navbar {
+    padding: var(--spacing-sm) var(--spacing-sm);
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+  
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .profile-img-container {
+    width: 240px;
+    height: 300px;
+  }
+  
+  .resume-actions {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    width: 100%;
+  }
+  
+  .resume-actions .btn {
+    width: 100%;
+  }
+  
+  .project-links {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .project-links .btn {
+    width: 100%;
+  }
+  
+  .name {
+    font-size: 2.5rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .resume-section h3 {
+    font-size: 1.3rem;
+  }
+  
+  .resume-item h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Very Small Devices */
+@media screen and (max-width: 400px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Height-based Media Queries */
+@media screen and (max-height: 700px) {
+  .section {
+    min-height: 0;
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .home-section {
+    min-height: 100vh;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  .theme-toggle,
+  .hamburger,
+  .scroll-indicator,
+  .contact-form,
+  .social-links,
+  footer {
+    display: none !important;
+  }
+  
+  .section {
+    min-height: 0;
+    padding: 1cm 0;
+    page-break-inside: avoid;
+  }
+  
+  .section-title {
+    font-size: 20pt;
+  }
+  
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  a {
+    text-decoration: underline;
+    color: blue !important;
+  }
+  
+  .project-card,
+  .skill-item,
+  .certificate-card {
+    break-inside: avoid;
+    border: 1px solid #ddd;
+    box-shadow: none !important;
+  }
+}
